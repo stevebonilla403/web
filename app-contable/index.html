@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>App Contable</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+
+  <h1>📊 Cuentas T (Mayor)</h1>
+
+  <div class="card">
+    <h2>💰 Capital Inicial y Caja</h2>
+    <input type="number" id="capitalInput" placeholder="Ej: 50000">
+    <button onclick="iniciarEmpresa()">Iniciar Empresa</button>
+    <div class="saldo">Saldo Caja: $<span id="saldo">0.00</span></div>
+  </div>
+
+  <div class="card">
+    <h2>🤖 Registrar Operaciones</h2>
+    <input type="text" id="concepto" placeholder="Describe la transacción">
+    <input type="number" id="debe" placeholder="Debe">
+    <input type="number" id="haber" placeholder="Haber">
+    <button onclick="registrar()">Registrar</button>
+  </div>
+
+  <div class="card">
+    <h2>📘 Libro Diario</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Cuenta</th>
+          <th>Debe ($)</th>
+          <th>Haber ($)</th>
+        </tr>
+      </thead>
+      <tbody id="tabla"></tbody>
+      <tfoot>
+        <tr>
+          <td colspan="2">TOTALES</td>
+          <td id="totalDebe">$0.00</td>
+          <td id="totalHaber">$0.00</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
